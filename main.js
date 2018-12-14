@@ -1,11 +1,6 @@
 AOS.init();
 let changed = false;
 $(document).ready(function() {
-  let contMargTop = parseInt(
-    $(".content")
-      .css("margin-bottom")
-      .split("px")[0]
-  );
   let fakeNavPadBot = parseInt(
     $(".fake-nav")
       .css("padding-bottom")

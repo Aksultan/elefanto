@@ -220,6 +220,7 @@ a {
   margin-top: -15px;
 }
 .content {
+  pointer-events: all;
   position: relative;
   margin: 60px;
   z-index: -2;
@@ -387,7 +388,7 @@ a {
   background-color: #ff5851;
 }
 .left-side {
-  width: 50%;
+  width: 45%;
 }
 .side-limit {
   max-width: 400px;
@@ -430,8 +431,14 @@ a {
 }
 .know-more {
   margin-top: 60px;
+  cursor: pointer;
+}
+.yellow-hover a::before {
+  background-color: rgba(243, 193, 48, 0.6) !important;
 }
 .know-more a {
+  position: relative;
+  overflow: hidden;
   text-decoration: none !important;
   font-family: "GilroyBold";
   font-size: 24px;
@@ -443,10 +450,44 @@ a {
   text-align: left;
   color: #1c1b20;
   padding-bottom: 9px;
-  border-bottom: 5px solid #1c1b20;
+}
+.know-more a::after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  right: 0;
+  height: 5px;
+  width: 100%;
+  background-color: #1c1b20;
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  transition: transform 400ms cubic-bezier(1, 0, 0, 1) 0ms;
+}
+.know-more a:hover:after {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+.know-more a::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 25%;
+  bottom: 43%;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 100%;
+  background-color: rgba(255, 88, 81, 0.6);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 400ms cubic-bezier(1, 0, 0, 1) 0ms;
+}
+.know-more a:hover:before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .right-side {
-  width: 50%;
+  width: 55%;
   height: 100%;
 }
 .available-list {
@@ -455,6 +496,21 @@ a {
   background-color: #000;
   padding: 60px;
   align-self: flex-end;
+}
+.available-list ul:nth-child(even) {
+  margin-left: 88px;
+}
+.available-list li:nth-child(1) {
+  position: relative;
+}
+.available-list li:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 15%;
+  height: 7px;
+  background-color: #fff;
 }
 .available-list ul {
   min-width: 377px;
@@ -485,6 +541,9 @@ a {
 .projects-section {
   margin-top: 340px;
 }
+.projects-header {
+  margin-right: 25%;
+}
 .projects-header span {
   color: #f3c130;
 }
@@ -493,4 +552,37 @@ a {
 }
 .yellow {
   color: #f3c130;
+}
+section {
+}
+.project-name {
+  margin-top: 63px;
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-align: right;
+  color: #1c1b20;
+}
+.project-period {
+  margin-top: 24px;
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-align: right;
+  color: #7b7b7b;
+}
+.project-right-side {
+  width: 30%;
+  margin-left: 83px;
+}
+.left-side img {
+  margin-top: 112px;
 }
